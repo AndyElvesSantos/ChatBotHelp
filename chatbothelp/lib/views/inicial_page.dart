@@ -1,5 +1,5 @@
+import 'package:chatbothelp/secondScreen.dart';
 import 'package:chatbothelp/views/home.dart';
-import "package:dialog_flowtter/dialog_flowtter.dart";
 import 'package:flutter/material.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 

@@ -1,6 +1,5 @@
 import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:flutter/material.dart';
-
 import 'app_body.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -27,7 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
   _init() async {
     DialogFlowtter.fromFile(
       path: "assets/credentials.json",
-      projectId: "apt-cubist-332622",
+      projectId: "chatbothelp-bkil",
     ).then(
       (instance) => dialogFlowtter = instance,
     );
@@ -47,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
               horizontal: 10,
               vertical: 5,
             ),
-            color: Colors.deepOrange,
+            color: Colors.blue,
             child: Row(
               children: [
                 Expanded(
