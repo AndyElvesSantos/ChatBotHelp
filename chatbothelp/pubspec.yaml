@@ -29,8 +29,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  intl: ^0.17.0
   dialog_flowtter: ^0.3.1
   splash_screen_view: ^3.0.0
+  clippy_flutter: ^1.1.1
+  url_launcher: ^6.0.15
+  font_awesome_flutter: ^9.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -39,6 +43,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+    
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -121,3 +127,4 @@ splash_screen_view:
   #info_plist_files:
   #  - 'ios/Runner/Info-Debug.plist'
   #  - 'ios/Runner/Info-Release.plist'
+

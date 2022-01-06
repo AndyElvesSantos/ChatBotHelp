@@ -1,5 +1,6 @@
 import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class AppBody extends StatelessWidget {
   final List<Map<String, dynamic>> messages;
@@ -43,12 +44,13 @@ class _MessageContainer extends StatelessWidget {
   final Message message;
   final bool isUserMessage;
 
-  const _MessageContainer({
+  _MessageContainer({
     Key? key,
     required this.message,
     this.isUserMessage = false,
   }) : super(key: key);
 
+  final DateFormat formatter = DateFormat('hh:mm');
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -60,21 +62,26 @@ class _MessageContainer extends StatelessWidget {
               return _CardContainer(card: message.card!);
             case MessageType.text:
             default:
-              return Container(
-                decoration: BoxDecoration(
-                    color: isUserMessage
-                        ? Colors.deepOrange[400]
-                        : Colors.deepOrange,
-                    borderRadius: BorderRadius.circular(25),
-                    border: Border.all(
-                        color: isUserMessage ? Colors.white : Colors.white)),
-                padding: const EdgeInsets.all(10),
-                child: Text(
-                  message.text?.text?[0] ?? '',
-                  style: TextStyle(
-                    color: Colors.white,
+              return Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        color:
+                            isUserMessage ? Colors.blue[200] : Colors.blue[200],
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(
+                            color:
+                                isUserMessage ? Colors.white : Colors.white)),
+                    padding: const EdgeInsets.all(10),
+                    child: Text(
+                      message.text?.text?[0] ?? '',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
-                ),
+                  Text(formatter.format(DateTime.now())),
+                ],
               );
           }
         },

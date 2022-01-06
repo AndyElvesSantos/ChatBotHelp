@@ -1,6 +1,8 @@
+import 'package:chatbothelp/views/page_denuncia.dart';
 import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:flutter/material.dart';
 import 'app_body.dart';
+import 'package:chatbothelp/views/info_page.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, this.title}) : super(key: key);
@@ -36,7 +38,40 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title ?? 'Chatbot HELP'),
+        leading:
+            //Botão de ajuda
+            IconButton(
+          icon: Icon(Icons.info_outlined),
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => InfoPage(
+                      title: 'Ajuda',
+                    )));
+          },
+          color: Colors.white,
+
+          //Botão de Denúncia
+        ),
+        centerTitle: true,
+        title: Text(
+          widget.title ?? 'Chatbot Help',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
+        ),
+        backgroundColor: Colors.blue[200],
+        actions: [
+          //Botão de Denúncia
+          IconButton(
+            icon: Icon(Icons.assignment_late_outlined),
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => CampoTexto()));
+            },
+            color: Colors.white,
+          ),
+        ],
       ),
       body: Column(
         children: [
@@ -105,3 +140,5 @@ class _MyHomePageState extends State<MyHomePage> {
     super.dispose();
   }
 }
+
+//parte nova
