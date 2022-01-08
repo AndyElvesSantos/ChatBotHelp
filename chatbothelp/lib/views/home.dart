@@ -3,6 +3,8 @@ import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:flutter/material.dart';
 import 'app_body.dart';
 import 'package:chatbothelp/views/info_page.dart';
+import 'package:chatbothelp/views/page_contatos.dart';
+import 'package:hasura_connect/hasura_connect.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, this.title}) : super(key: key);
@@ -16,6 +18,23 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   late DialogFlowtter dialogFlowtter;
   final TextEditingController _controller = TextEditingController();
+
+  //Conexão com o Banco
+  HasuraConnect hasuraConnect = HasuraConnect(
+    "https://polite-tortoise-57.hasura.app/v1/graphql",
+  );
+
+  String doQuery = """
+    subscription Denuncia {
+      denuncia (order_by: {id: id_denuncia}) {
+        usuario
+        nome
+        sexo
+        idade
+        descricao
+      }
+    }
+  """;
 
   List<Map<String, dynamic>> messages = [];
 
@@ -49,8 +68,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     )));
           },
           color: Colors.white,
-
-          //Botão de Denúncia
         ),
         centerTitle: true,
         title: Text(
@@ -90,13 +107,24 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(color: Colors.black),
                   ),
                 ),
+                //Botão enviar mensagem
                 IconButton(
                   color: Colors.white,
-                  icon: Icon(Icons.send),
+                  icon: Icon(Icons.send_outlined),
                   onPressed: () {
                     sendMessage(_controller.text);
                     _controller.clear();
                   },
+                ),
+
+                //Botão de Contatos
+                IconButton(
+                  icon: Icon(Icons.call),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => PageContatos()));
+                  },
+                  color: Colors.white,
                 ),
               ],
             ),

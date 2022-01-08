@@ -37,6 +37,8 @@ class _CampoTextoState extends State<CampoTexto> {
             _index = index;
           });
         },
+
+        //Primeira pergunta - VITIMA OU DENUNCIANTE
         steps: <Step>[
           Step(
             title: const Text('Você é vítima ou apenas denunciante? '),
@@ -67,14 +69,58 @@ class _CampoTextoState extends State<CampoTexto> {
               ],
             ),
           ),
+
+          //Segunda Pergunta - NOME
           Step(
             title: const Text('Digite seu nome: '),
             content: TextField(),
           ),
-          const Step(
-            title: Text('Step 2 title'),
-            content: Text('Content for Step 2'),
+
+          //Terceria Pergunta - SEXO
+          Step(
+            title: const Text('Qual seu sexo? '),
+            content: Row(
+              children: [
+                Expanded(
+                  child: RadioListTile<String>(
+                    title: Text("Masculino"),
+                    value: "Masculino",
+                    groupValue: passo_inicial,
+                    onChanged: (value) {
+                      setState(() {});
+                      passo_inicial = value!;
+                    },
+                  ),
+                ),
+                Expanded(
+                  child: RadioListTile<String>(
+                    title: Text("Feminino"),
+                    value: "Masculino",
+                    groupValue: passo_inicial,
+                    onChanged: (value) {
+                      setState(() {});
+                      passo_inicial = value!;
+                    },
+                  ),
+                ),
+              ],
+            ),
           ),
+          //Quarta Pergunta - IDADE
+          Step(
+            title: const Text('Sua idade: '),
+            content: TextField(),
+          ),
+          //Quinta pergunta
+          Step(
+            title: const Text('Faça um breve relato sobre os acontecidos: '),
+            content: TextField(),
+          ),
+          //Pergunta final
+          //const Step(
+          //title: Text('Step 2 title'),
+          //content: Text('Content for Step 2'),
+          //),
         ],
       ),
     );

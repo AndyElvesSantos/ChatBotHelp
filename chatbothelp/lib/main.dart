@@ -1,10 +1,10 @@
 //importações necessárias
 import 'package:chatbothelp/views/home.dart';
-import 'package:chatbothelp/views/inicial_page.dart';
+//import 'package:chatbothelp/views/inicial_page.dart';
 import 'package:flutter/material.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
-import 'package:flutter/material.dart';
-import 'SecondScreen.dart';
+//import 'package:flutter/material.dart';
+//import 'SecondScreen.dart';
 
 //Primeria página do Chat
 //Splash de 15 segundos | Apresentação do Bot

@@ -151,7 +151,7 @@ class _CardContainer extends StatelessWidget {
                           return TextButton(
                             style: TextButton.styleFrom(
                               primary: Colors.white,
-                              backgroundColor: Colors.purple,
+                              backgroundColor: Colors.blueGrey[900],
                             ),
                             child: Text(button.text ?? ''),
                             onPressed: () {
