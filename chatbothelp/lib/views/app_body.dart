@@ -54,6 +54,12 @@ class _MessageContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      //codigo novo
+      decoration: BoxDecoration(
+          color: isUserMessage ? Colors.white : Colors.blue[200],
+          borderRadius: BorderRadius.circular(25),
+          border:
+              Border.all(color: isUserMessage ? Colors.black : Colors.blue)),
       constraints: BoxConstraints(maxWidth: 250),
       child: LayoutBuilder(
         builder: (context, constrains) {

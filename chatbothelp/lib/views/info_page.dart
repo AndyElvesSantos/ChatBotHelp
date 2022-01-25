@@ -36,7 +36,7 @@ class _InfoPageState extends State<InfoPage> {
               color: Colors.grey.shade300,
               child: SizedBox(
                 width: 300.0,
-                height: 450.0,
+                height: 350.0,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -60,7 +60,7 @@ class _InfoPageState extends State<InfoPage> {
                         ' que elas não estão sozinhas e muito menos desacreditadas.  ',
                         style: TextStyle(
                           color: Colors.black,
-                          fontStyle: FontStyle.italic,
+                          //fontStyle: FontStyle.italic,
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -86,6 +86,14 @@ class _InfoPageState extends State<InfoPage> {
                           // ),
                           // backgroundColor: Colors.blue[200],
                           // ),
+                          Text(
+                            "Clique no ícone abaixo, para conhecer:",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14.0),
+                            textAlign: TextAlign.center,
+                          ),
                           SizedBox(
                             width: 5.0,
                           ),
@@ -127,7 +135,7 @@ class _InfoPageState extends State<InfoPage> {
                         'Plantão Psicológico Voluntário e Psicoterapia Social. Atendimento Online.',
                         style: TextStyle(
                           color: Colors.black,
-                          fontStyle: FontStyle.italic,
+                          //fontStyle: FontStyle.italic,
                         ),
                         textAlign: TextAlign.center,
                       ),

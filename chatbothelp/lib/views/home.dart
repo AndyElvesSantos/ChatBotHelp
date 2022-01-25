@@ -1,10 +1,10 @@
+import 'app_body.dart';
+import 'package:flutter/material.dart';
+import 'package:chatbothelp/views/info_page.dart';
+import 'package:hasura_connect/hasura_connect.dart';
 import 'package:chatbothelp/views/page_denuncia.dart';
 import 'package:dialog_flowtter/dialog_flowtter.dart';
-import 'package:flutter/material.dart';
-import 'app_body.dart';
-import 'package:chatbothelp/views/info_page.dart';
 import 'package:chatbothelp/views/page_contatos.dart';
-import 'package:hasura_connect/hasura_connect.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, this.title}) : super(key: key);
@@ -31,7 +31,13 @@ class _MyHomePageState extends State<MyHomePage> {
         nome
         sexo
         idade
-        descricao
+        telefone
+        rua
+        numero
+        bairro
+        cidade
+        estado
+        descricao 
       }
     }
   """;
@@ -48,8 +54,21 @@ class _MyHomePageState extends State<MyHomePage> {
     DialogFlowtter.fromFile(
       path: "assets/credentials.json",
       projectId: "chatbothelp-bkil",
-    ).then(
-      (instance) => dialogFlowtter = instance,
+    ).then((instance) {
+      dialogFlowtter = instance;
+      _iniciarConversa();
+    });
+  }
+
+  void _iniciarConversa() async {
+    DetectIntentResponse response = await dialogFlowtter.detectIntent(
+      queryInput: QueryInput(text: TextInput(text: "Ola")),
+    );
+    if (response.message == null) return;
+    setState(
+      () {
+        addMessage(response.message!);
+      },
     );
   }
 

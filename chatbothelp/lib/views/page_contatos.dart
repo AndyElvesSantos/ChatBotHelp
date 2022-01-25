@@ -35,16 +35,17 @@ class _ContatoPageState extends State<PageContatos> {
           Card(
               color: Colors.grey.shade300,
               child: SizedBox(
-                width: 500,
-                height: 450.0,
+                width: 350,
+                height: 400,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     //mainAxisSize: MainAxisSize.min,
+
                     children: [
                       Text(
-                        "ENTENDA SEU CASO, E LIGUE!",
+                        "SE PROTEJA, LIGUE!",
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -56,7 +57,7 @@ class _ContatoPageState extends State<PageContatos> {
                       ),
                       //CONTATO 1
                       Text(
-                        'DISQUE 100,',
+                        'DISQUE 100',
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -68,13 +69,77 @@ class _ContatoPageState extends State<PageContatos> {
                         ' direitos de grupos vulneráveis e de denúncias de violações de direitos humanos.',
                         style: TextStyle(
                           color: Colors.black,
-                          fontStyle: FontStyle.italic,
+                          //fontStyle: FontStyle.italic,
                         ),
                         textAlign: TextAlign.center,
                       ),
                       SizedBox(
                         height: 10.0,
                       ),
+                      //CONTATO 2 - 180
+                      Text(
+                        'LIGUE 180',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        'O Ligue 180 é um serviço de utilidade pública essencial para o enfrentamento à violência contra a mulher.'
+                        ' ',
+                        style: TextStyle(
+                          color: Colors.black,
+                          //fontStyle: FontStyle.italic,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text(
+                        //CONTATO 3 - DELEGACIA
+                        'DELEGACIA',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        'Unidade policial fixa para atendimento ao público. Algumas regiões possuem delegacias '
+                        'especializadas como a Delegacia de Proteção à Criança e ao Adolescente (DPCA).'
+                        ' ',
+                        style: TextStyle(
+                          color: Colors.black,
+                          //fontStyle: FontStyle.italic,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      //CONTATO 4 - CONSELHO TUTELAR
+                      Text(
+                        'CONSELHO TUTELAR',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        'O Conselho Tutelar (CT) é um órgão administrativo municipal, autônomo, responsável pelo atendimento'
+                        ' de crianças ameaçadas ou violadas em seus direitos. Cada município deve ter pelo menos um Conselho Tutelar.  '
+                        ''
+                        ' ',
+                        style: TextStyle(
+                          color: Colors.black,
+                          //fontStyle: FontStyle.italic,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         //crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,9 +159,9 @@ class _ContatoPageState extends State<PageContatos> {
                           // ),
                           // backgroundColor: Colors.blue[200],
                           // ),
-                          SizedBox(
-                            width: 5.0,
-                          ),
+                          //SizedBox(
+                          //   width: 5.0,
+                          // ),
                           /*IconButton(
                             // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
                             icon: FaIcon(
@@ -142,16 +207,24 @@ class _ContatoPageState extends State<PageContatos> {
                       SizedBox(
                         height: 10.0,
                       ),
+                      Text(
+                        'PARA MAIS INFORMAÇÕES E OPÇÕES DE CONTATOS, CLIQUE NO BOTÃO ABAIXO',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18),
+                        textAlign: TextAlign.center,
+                      ),
                       IconButton(
                         // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
                         icon: FaIcon(
-                          FontAwesomeIcons.instagram,
+                          FontAwesomeIcons.clipboardList,
                           size: 50.0,
                           color: Colors.blue[200],
                         ),
                         onPressed: () async {
                           const url =
-                              'https://www.instagram.com/psicologosdeplantao_/?hl=pt-br';
+                              'https://www.podeserabuso.org.br/canais-de-denuncia/';
                           if (await canLaunch(url)) {
                             await launch(url);
                           } else {
